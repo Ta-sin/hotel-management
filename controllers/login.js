@@ -5,7 +5,7 @@ const { check, validationResult } = require('express-validator');
 
 router.get('/', (req, res) => {
     res.render('Login');
-})
+});
 
 router.post('/', (req, res) => {
 
@@ -19,13 +19,12 @@ loginModel.validate(user, function (status) {
         if (status) {console.log(user.email);
             console.log(user.password);
             req.session.email = user.email;
-
             //res.redirect('/home');
-            res.redirect('/profile');
+            res.redirect('/dashboard');
         } else {
             res.render('Login');
         }
     });
-})
+});
 
 module.exports = router;
