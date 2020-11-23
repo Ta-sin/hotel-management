@@ -18,6 +18,8 @@ const dashboardprofile  = require('./controllers/dashboardprofile');
 const room         = require('./controllers/room');
 const banquet         = require('./controllers/banquet');
 const info         = require('./controllers/info');
+const contact         = require('./controllers/contact');
+const hmessage         = require('./controllers/hmessage');
 
 
 
@@ -52,6 +54,9 @@ app.use('/dashboardprofile', dashboardprofile);
 app.use('/room', room);
 app.use('/Banquet', banquet);
 app.use('/info', info);
+app.use('/contact', contact);
+app.use('/hmessage', hmessage);
+
 
 
 

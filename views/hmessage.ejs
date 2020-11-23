@@ -15,8 +15,8 @@
 
     <!-- Custom styles for this template -->
     <link href="assets/dashboard/css/simple-sidebar.css" rel="stylesheet">
-    <link href="assets/room/css/style.css" rel="stylesheet">
 <!-- profile -->
+    <link href="assets/dashboard/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="assets/dashboard/css/bootstrap.min.js"></script>
 
     <script src="assets/dashboard/css/jquery.min.js"></script>
@@ -33,7 +33,7 @@
             <div class="list-group list-group-flush">
                 <a href="/dashboard" class="list-group-item list-group-item-action bg-light">Dashboard</a>
                 <a href="/room" class="list-group-item list-group-item-action bg-light">Room</a>
-                <a href="/Banquet" class="list-group-item list-group-item-action bg-light">Banquet</a>
+                <a href="/banquet" class="list-group-item list-group-item-action bg-light">Banquet</a>
                 <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
                 <a href="/dashboardprofile" class="list-group-item list-group-item-action bg-light">Profile</a>
                 <a href="/hmessage" class="list-group-item list-group-item-action bg-light">Message</a>
@@ -43,50 +43,18 @@
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
-          <section>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-8 col-lg-8 col-xl-6">
-        <div class="row">
-          <div class="col text-center">
-            <h1>Room Information</h1>
-            <p class="text-h3">Provide with proper details</p>
-          </div>
-        </div>
-          <form method="POST" class="register-form" id="register-form">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-          </div>
-          <div class="col mt-4">
-            <input type="text" class="form-control" placeholder="Room Name" name="rname"  id="rname">
-          </div>
-        </div>
-        <div class="row align-items-center mt-4">
-          <div class="col">
-            <input type="text" class="form-control" placeholder="price" name="rprice" id="rprice">
-          </div>
-        </div>
-        <div class="row align-items-center mt-4">
-          <div class="col-md-12">
-              <div class="form-group form-group-textarea mb-md-0">
-                  <textarea class="form-control" placeholder="Your Message *" required="required" data-validation-required-message="Please enter room details" name="rdescription" id="rdescription"></textarea>
-                  <p class="help-block text-danger"></p>
-              </div>
-          </div>
-        </div>
-        <div class="row justify-content-start mt-4">
-          <div class="col">
 
-              <input type="submit" name="signup" id="signup" class="btn btn-primary mt-4" value="REGISTER"/>
-
+      <% for (var msg of message){ %>
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title"><%= msg.mname%></h5>
+              <h6 class="card-subtitle mb-2 text-muted"><%= msg.memail%></h6>
+              <p class="card-text"><%= msg.mmessage%></p>
+              <!-- <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a> -->
+            </div>
           </div>
-        </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
+        <% } %>
         </div>
         <!-- /#page-content-wrapper -->
 
