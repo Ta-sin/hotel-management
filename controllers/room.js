@@ -18,6 +18,7 @@ router.post('/', (req, res) => {
         rprice: req.body.rprice,
         rdescrription: req.body.rdescription,
         rdp: "",
+        uid: req.session.uid
     };
 
   roomModel.insert(admin, function(status) {

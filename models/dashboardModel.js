@@ -2,8 +2,15 @@ const db = require('./db');
 
 module.exports = {
 
-    Dashboard: function (room_info, callback) {
-        var sql = "select * from room_info where rid = '" + room_info.rid + "'";
+    Dashboard: function (room, callback) {
+        var sql = "select * from room_info where uid = '" + room.uid + "'";
+
+        db.getResults(sql, function (status) {
+            callback(status);
+        });
+    },
+    DashboardBanquet: function (room, callback) {
+        var sql = "select * from banquet_info where uid = '" + room.uid + "'";
 
         db.getResults(sql, function (status) {
             callback(status);

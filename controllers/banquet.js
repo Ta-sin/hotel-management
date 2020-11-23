@@ -18,9 +18,11 @@ router.post('/', (req, res) => {
         bprice: req.body.bprice,
         bdescrription: req.body.bdescription,
         bdp: "",
+        uid: req.session.uid
     };
 
   banquetModel.insert(admin, function(status) {
+    console.log(admin);
         if (status) {
             res.redirect('/dashboard');
         } else {

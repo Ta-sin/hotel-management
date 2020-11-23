@@ -49,7 +49,7 @@ app.use('/home', home);
 app.use('/dashboard', dashboard);
 app.use('/dashboardprofile', dashboardprofile);
 app.use('/room', room);
-app.use('/banquet', banquet);
+app.use('/Banquet', banquet);
 
 
 

@@ -19,6 +19,7 @@ loginModel.validate(user, function (status) {
         if (status) {console.log(user.email);
             console.log(user.password);
             req.session.email = user.email;
+            req.session.uid = status[0].id;
             //res.redirect('/home');
             res.redirect('/dashboard');
         } else {
