@@ -17,6 +17,7 @@ const dashboard         = require('./controllers/dashboard');
 const dashboardprofile  = require('./controllers/dashboardprofile');
 const room         = require('./controllers/room');
 const banquet         = require('./controllers/banquet');
+const info         = require('./controllers/info');
 
 
 
@@ -50,6 +51,7 @@ app.use('/dashboard', dashboard);
 app.use('/dashboardprofile', dashboardprofile);
 app.use('/room', room);
 app.use('/Banquet', banquet);
+app.use('/info', info);
 
 
 

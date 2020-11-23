@@ -1,9 +1,13 @@
 const express = require('express');
+const infoModel = require.main.require('./models/infoModel');
 const router = express.Router();
 
 
 router.get('/', (req, res)=>{
-  res.render('home');
+
+  infoModel.Rooms(function(results){
+      res.render('home',{rooms: results});
+  });
 
 });
 
