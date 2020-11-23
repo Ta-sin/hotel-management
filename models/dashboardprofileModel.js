@@ -9,6 +9,9 @@ module.exports = {
             callback(status);
         });
     },
+
+
+    
     UpdateInfo: function (user, callback) {
         var sql = "UPDATE `user` SET `name`='" + user.name + "',`password`='" + user.password + "',`dp`='" + user.dp + "' WHERE `email`='" + user.email + "';";
 

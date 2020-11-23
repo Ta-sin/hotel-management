@@ -15,6 +15,7 @@ const logout            = require('./controllers/logout');
 const home              = require('./controllers/home');
 const dashboard         = require('./controllers/dashboard');
 const dashboardprofile  = require('./controllers/dashboardprofile');
+const room         = require('./controllers/room');
 
 
 
@@ -46,6 +47,7 @@ app.use('/login', login);
 app.use('/home', home);
 app.use('/dashboard', dashboard);
 app.use('/dashboardprofile', dashboardprofile);
+app.use('/room', room);
 
 
 

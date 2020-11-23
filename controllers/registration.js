@@ -2,6 +2,7 @@ const express = require('express');
 const registrationModel = require.main.require('./models/registrationModel');
 const router = express.Router();
 
+
 var msg = "";
 
 router.get('/', (req, res) => {
@@ -16,9 +17,9 @@ router.post('/', (req, res) => {
         type: "Admin",
         dp: "",
         status: "Inactive",
-
-
     };
+
+
     registrationModel.insert(admin, function(status) {
         if (status) {
             res.redirect('/login');
@@ -27,6 +28,6 @@ router.post('/', (req, res) => {
         }
 
     });
-})
+});
 
 module.exports = router;
